@@ -1,0 +1,11 @@
+#!/bin/bash
+
+result=$(python checkPhpFpm.py)
+
+now=$(date)
+
+echo $now $result >> checkResult
+
+if [ $result == "True" ];then
+    sh mail-phpfpm.sh
+fi
